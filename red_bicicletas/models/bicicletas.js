@@ -35,6 +35,15 @@ Bicicleta.removeById=function(aBiciID){
     }
 }
 
+Bicicleta.updateById=function(aBiciID,BiciColor,BiciModelo,BiciLat,BiciLong){
+    let aBici=Bicicleta.findById(aBiciID);
+    let verificacion = aBici instanceof Bicicleta;
+    if(verificacion){
+        abi
+    }
+
+}
+
 
 var a=new Bicicleta(1,'rojo','urbana',[-36.6012424,-58.3861497])
 var b=new Bicicleta(2,'blanca','urbana',[-34.596932,-58.3808287])
