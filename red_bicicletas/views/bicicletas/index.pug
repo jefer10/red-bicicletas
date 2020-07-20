@@ -2,6 +2,9 @@ extends ../layout
 
 
 block content
+
+    a(href='/bicicletas/create') NUEVA BICICLETA
+
     table.table
             thead
                 tr
@@ -9,6 +12,7 @@ block content
                     th color
                     th modelo
                     th ubicacion
+                    th 
             tbody
                 each bici in bicis
                     tr 
@@ -16,6 +20,10 @@ block content
                         td=bici.color 
                         td=bici.modelo
                         td=bici.ubicacion
-
+                        td 
+                            form.inline( method='post' action="/bicicletas/"+bici.id+"/delete" )
+                                input.btn(type='hidden' name='id' value=bici.id)
+                                button.link-button(type='submit' name='submit_param' value='submit_value' class='btn')
+                                    ='ELIMINAR'
 
 
