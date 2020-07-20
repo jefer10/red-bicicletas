@@ -1,0 +1,21 @@
+extends ../layout
+
+
+block content
+    table.table
+            thead
+                tr
+                    th #
+                    th color
+                    th modelo
+                    th ubicacion
+            tbody
+                each bici in bicis
+                    tr 
+                        td=bici.id
+                        td=bici.color 
+                        td=bici.modelo
+                        td=bici.ubicacion
+
+
+
