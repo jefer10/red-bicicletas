@@ -38,9 +38,10 @@ Bicicleta.removeById=function(aBiciID){
 Bicicleta.updateById=function(aBiciID,BiciColor,BiciModelo,BiciLat,BiciLong){
     let aBici=Bicicleta.findById(aBiciID);
     let verificacion = aBici instanceof Bicicleta;
-    if(verificacion){
-        abi
-    }
+    aBici.id=aBiciID;
+    aBici.color=BiciColor;
+    aBici.modelo=BiciModelo;
+    aBici.ubicacion=[BiciLat,BiciLong];
 
 }
 
