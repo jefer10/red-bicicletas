@@ -1,3 +1,10 @@
+var mongoose=require('mongoose');
+var Schema=mongoose.Schema;
+
+
+
+
+
 var Bicicleta= function(id,color,modelo,ubicacion){
     this.id=id;
     this.color=color;
