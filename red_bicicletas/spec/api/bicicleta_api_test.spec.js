@@ -1,6 +1,7 @@
 var Bicicleta=require('../../models/bicicletas');
 var request=require('request');
 var server=require('../../bin/www');
+var mongoose=require('mongoose');
 
 describe('Bicicleta API',()=>{
     //test del get

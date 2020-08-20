@@ -56,7 +56,7 @@ bicicletaSchema.statics.add=function(aBici,cd){
  * @param {*} cb callback
  */
 bicicletaSchema.statics.findBycode=function(aCode,cb){
-    return this.findOne({'code':aCode},cb);//trae el primero que encuentre dependiendo del query
+    return this.findOne({code:aCode},cb);//trae el primero que encuentre dependiendo del query
 }
 
 /**
@@ -64,8 +64,8 @@ bicicletaSchema.statics.findBycode=function(aCode,cb){
  * @param {*} aCode valor del code
  * @param {*} cb callback
  */
-bicicletaSchema.statics.removeBycode=(aCode,cb)=>{
-    return this.deleteOne({code:aCode},cb);
+bicicletaSchema.statics.removeBycode=function(aCode,cb){
+    return this.deleteOne({'code':aCode},cb);
 }
 
 //exporta el modelo "bicicletaSchema" a "mongoose"

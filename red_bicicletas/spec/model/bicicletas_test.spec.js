@@ -1,6 +1,7 @@
 var Bicicleta=require('../../models/bicicletas');
 
 var mongoose=require('mongoose');
+const bicicletas = require('../../models/bicicletas');
 
 
 /**
@@ -107,6 +108,43 @@ describe('testing bicicletas',function(){
             });
         });
     });
+
+
+
+    describe('test del deleteBycode bici',()=>{
+    it('elimina la bici con code:2',(done)=>{
+        bicicletas.allBicis((err,bicis)=>{
+            expect(bicis.length).toBe(0);
+            var aBici=new Bicicleta({code:1,color:'verde',modelo:'ruta'});
+            var aBici2=new Bicicleta({code:2,color:'azul',modelo:'bmx'});
+            bicicletas.add(aBici,(err,newbici)=>{
+                if(err){
+                    console.log(err);
+                }
+                bicicletas.add(aBici2,(err,newbici)=>{
+                    bicicletas.allBicis((err,bicis)=>{
+                        expect(bicis.length).toBe(2);
+                        bicicletas.removeBycode(2,(err)=>{
+                            if(err){
+                                console.log(err);
+                            }
+                            bicicletas.findBycode(2,(err,bicis)=>{
+                                if(err){
+                                    console.log(err);
+                                }
+                                expect(bicis).toBeUndefined;
+                                done();
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+    });
+
+
+    
 
 
 
